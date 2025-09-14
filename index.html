@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snehaleena Rath | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #dcdcdc;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+    }
+
+    nav h1 {
+      font-size: 26px;
+      font-weight: bold;
+      background: linear-gradient(90deg, cyan, violet, hotpink);
+      -webkit-background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #dcdcdc;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: cyan;
+      text-shadow: 0 0 10px cyan, 0 0 20px hotpink;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 100px 50px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Headings */
+    h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, cyan, magenta, violet);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      text-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    }
+
+    h3 {
+      font-size: 26px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #00e5ff;
+      text-shadow: 0 0 15px #00e5ff, 0 0 25px hotpink;
+    }
+
+    p, li {
+      max-width: 900px;
+      margin: auto;
+      font-size: 18px;
+      color: #b8e0ff;
+      line-height: 1.6;
+    }
+
+    ul {
+      text-align: left;
+      max-width: 900px;
+      margin: auto;
+    }
+
+   /* Hero Section */
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* align content to the left side */
+  gap: 40px;
+  margin-top: 80px; /* reduced top space */
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+/* Hero Image - changed to square */
+.hero-content img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px; /* small rounded corners instead of circle */
+  border: 3px solid cyan;
+  box-shadow: 0 0 30px hotpink, 0 0 50px cyan;
+}
+
+ /* Hero Text */
+.hero-text {
+  max-width: 600px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif; /* modern font */
+}
+
+.hero-text h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #00ffff, #ff00ff); /* neon gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px #00ffff, 0 0 25px #ff00ff;
+}
+
+.hero-text p {
+  font-size: 16px;
+  color: #201594;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff;
+  line-height: 1.5;
+}
+
+/* Reduce extra space in sections */
+section {
+  padding: 50px 50px; /* reduced from 100px */
+  min-height: auto;   /* auto instead of 100vh */
+}
+
+
+    /* Form */
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background: #111;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+
+    form button {
+      padding: 12px 20px;
+      background: linear-gradient(90deg, hotpink, violet);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      text-shadow: 0 0 10px cyan;
+    }
+
+    form button:hover {
+      background: linear-gradient(90deg, cyan, hotpink);
+      box-shadow: 0 0 20px cyan, 0 0 30px hotpink;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #1c0b5b;
+      z-index: 10;
+      position: relative;
+    }
+
+    footer a {
+      color: cyan;
+      text-decoration: none;
+      margin: 0 10px;
+      text-shadow: 0 0 10px cyan;
+    }
+
+    footer a:hover {
+      color: hotpink;
+      text-shadow: 0 0 15px hotpink, 0 0 25px cyan;
+    }
+
+    canvas#bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <h1>Snehaleena</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+<!-- Hero Section -->
+<section id="home">
+  <div class="hero-content">
+    <!-- Changed: square image -->
+    <img src="images/myphoto.jpg" alt="Snehaleena Rath">
+    <div class="hero-text">
+      <h1>Hello, I'm <span>Snehaleena Rath</span></h1>
+      <h3>Aspiring AI & Web Developer | Passionate about Cloud Computing, Emerging Technologies & Innovative Solutions.</h3>
+    </div>
+  </div>
+</section>
+
+  <!-- About Section -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="about-card">
+    <p>
+      Enthusiastic and motivated B.Tech student at NIST University with strong academic performance.
+      Skilled in programming, web development, and emerging technologies. Passionate about problem-solving,
+      cloud computing, and AI. Actively engaged in workshops, certifications, and tech events.
+    </p>
+  </div>
+</section>
+
+<!-- Resume Section -->
+<section id="resume">
+  <h2>My Resume</h2>
+
+  <div class="resume-container">
+    <!-- Career Objective -->
+    <div class="resume-box">
+      <h3>Career Objective</h3>
+      <p>
+        Enthusiastic and motivated B.Tech student with strong academic performance and a solid foundation in programming,
+        web development, and emerging technologies. Passionate about problem-solving, cloud computing, and AI. Seeking
+        opportunities to apply technical expertise in real-world projects while enhancing skills through continuous learning.
+      </p>
+    </div>
+    <!-- Education -->
+    <div class="resume-box">
+      <h3>Education</h3>
+      <ul>
+        <li><b>Bachelor of Technology (B.Tech)</b> – NIST University (1st Sem: 7.95 | 2nd Sem: 8.25)</li>
+        <li><b>Intermediate</b> – Kharagpur Vision Academy, Kharagpur (70.01%)</li>
+        <li><b>High School</b> – Christopher Day School, Kharagpur (81.22%)</li>
+      </ul>
+    </div>
+    <!-- Skills, Certifications, Achievements Grid -->
+    <div class="resume-grid">
+      <div class="resume-box">
+        <h3>Technical Skills</h3>
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Python, C, C++</li>
+          <li>SQL</li>
+        </ul>
+      </div>
+      <div class="resume-box">
+        <h3>Certifications & Programs</h3>
+        <ul>
+          <li>C Programming – Cisco Networking Academy</li>
+          <li>Gen AI Program – Google Cloud</li>
+          <li>Arcade Facilitator Program – Google</li>
+          <li>Attended multiple tech-related workshops & events</li>
+        </ul>
+      </div>
+
+      <div class="resume-box">
+        <h3>Achievements & Leadership</h3>
+        <ul>
+          <li>Core Member – Technical Club, NIST University</li>
+        </ul>
+      </div>
+    </div>
+</section>
+  <!-- Three.js Background -->
+  <canvas id="bg"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
+<script>
+const canvas = document.getElementById("bg");
+const scene = new THREE.Scene();
+scene.background = new THREE.Color("#050510"); // hologram dark bg
+
+// Camera
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
+camera.position.z = 50;
+
+// Renderer
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+
+// Lights
+const ambientLight = new THREE.AmbientLight(0x00ffff, 0.5);
+scene.add(ambientLight);
+
+const pointLight = new THREE.PointLight(0xff00ff, 1.2, 300);
+pointLight.position.set(50, 50, 50);
+scene.add(pointLight);
+
+// --- Group for cubes & lines ---
+const group = new THREE.Group();
+scene.add(group);
+
+// Cube material
+const cubeMaterial = new THREE.MeshBasicMaterial({
+  color: 0x00ffff,
+  wireframe: true,
+  transparent: true,
+  opacity: 0.6
+});
+
+// Create multiple cubes
+const cubes = [];
+for (let i = 0; i < 40; i++) {
+  const size = Math.random() * 3 + 1;
+  const geometry = new THREE.BoxGeometry(size, size, size);
+  const cube = new THREE.Mesh(geometry, cubeMaterial);
+  cube.position.set(
+    (Math.random() - 0.5) * 120,
+    (Math.random() - 0.5) * 120,
+    (Math.random() - 0.5) * 120
+  );
+  group.add(cube);
+  cubes.push(cube);
+}
+
+// --- Connecting lines ---
+const lineMaterial = new THREE.LineBasicMaterial({ color: 0xff00ff, transparent: true, opacity: 0.3 });
+const lineGeometry = new THREE.BufferGeometry();
+const positions = new Float32Array(cubes.length * 3);
+lineGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
+group.add(lines);
+
+// Track mouse movement
+let mouseX = 0;
+document.addEventListener("mousemove", (event) => {
+  mouseX = (event.clientX / window.innerWidth - 0.5) * 2; // -1 to 1 range
+});
+
+// --- Animate ---
+function animate() {
+  requestAnimationFrame(animate);
+
+  // Rotate group based on mouse
+  group.rotation.y += 0.002 - mouseX * 0.01;
+  group.rotation.x += 0.001;
+
+  // Rotate individual cubes
+  cubes.forEach(cube => {
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.008;
+  });
+
+  // Update line connections (pairs of cubes)
+  const positions = lineGeometry.attributes.position.array;
+  for (let i = 0; i < cubes.length - 1; i++) {
+    const a = cubes[i].position;
+    const b = cubes[(i + 1) % cubes.length].position;
+    positions[i * 6] = a.x;
+    positions[i * 6 + 1] = a.y;
+    positions[i * 6 + 2] = a.z;
+    positions[i * 6 + 3] = b.x;
+    positions[i * 6 + 4] = b.y;
+    positions[i * 6 + 5] = b.z;
+  }
+  lineGeometry.attributes.position.needsUpdate = true;
+
+  renderer.render(scene, camera);
+}
+animate();
+
+// Resize handling
+window.addEventListener("resize", () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+</script>
+
+
+</body>
+</html>
+  <style>
+/* Resume Container */
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Grid for Skills, Certifications, Achievements */
+.resume-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Individual resume boxes */
+.resume-box {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 30px rgba(255, 0, 255, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.resume-box h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #00e5ff;
+  text-shadow: 0 0 10px #00e5ff, 0 0 20px hotpink;
+}
+
+.resume-box p,
+.resume-box ul {
+  font-size: 16px;
+  color: #b8e0ff;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.resume-box ul li {
+  margin-bottom: 8px;
+}
+
+.resume-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px cyan, 0 0 40px hotpink;
+}
+/* About Card */
+.about-card {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px 30px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 35px rgba(255, 0, 255, 0.3);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-card p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #b8e0ff;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px cyan, 0 0 50px hotpink;
+}
+  </style>
+  <style>
+  /* Reduce Hero section bottom space */
+.hero-content {
+  margin-top: 60px; /* slightly less top space */
+  margin-bottom: 20px; /* add a small bottom margin */
+}
+
+/* Reduce spacing of headings in Hero section */
+.hero-text h2 {
+  margin-bottom: 5px; /* reduce space between H2 and paragraph */
+}
+
+.hero-text p {
+  margin-bottom: 10px; /* small margin before next section */
+}
+
+/* Reduce section padding globally */
+section {
+  padding: 60px 50px; /* reduced from 80px */
+}
